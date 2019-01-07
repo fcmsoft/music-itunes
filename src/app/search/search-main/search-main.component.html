@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+        <ngb-tabset>
+            <ngb-tab title="Artistas">
+              <ng-template ngbTabContent>
+                  <app-search [dataProvider]='artists' link="/artist"></app-search>
+              </ng-template>
+            </ngb-tab>
+            <ngb-tab title="Albumes">
+              <ng-template ngbTabContent>
+                  <app-search [dataProvider]='albums' link="/album"></app-search>
+              </ng-template>
+            </ngb-tab>
+        </ngb-tabset>
+
+      </div>
+  </div>
+</div>

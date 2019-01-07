@@ -1,0 +1,24 @@
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text fa fa-search"></span>
+  </div>
+  <input
+    #searchInput
+    type="text"
+    class="form-control"
+    placeholder="Search"
+    aria-label="Search"
+    aria-describedby="button-addon">
+</div>
+<div *ngIf="list$ | async as list">
+  <ul *ngFor="let data of paginatedList(list.results, page, list.resultCount)">
+    <li class="data">
+      <a [routerLink]="[link, data.id]">{{data.name}}</a>
+    </li>
+  </ul>
+  <div class="d-flex flex-row-reverse" *ngIf="list.resultCount > 0">
+    <div class="p2">
+        <ngb-pagination [collectionSize]="list.resultCount" [(page)]="page"></ngb-pagination>
+    </div>
+  </div>
+</div>

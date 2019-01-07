@@ -1,0 +1,13 @@
+<div class="card" *ngIf="albumData$ | async as album">
+  <div class="card-body">
+    <h5 class="card-title">{{album.collectionName}}</h5>
+    <p class="card-text">Artist: {{album.artistName}}</p>
+    <img class="album-image" src="{{album.artworkUrl100}}" alt="Card image cap">
+    <ul class="albums-list wrapper">
+      <li *ngFor="let song of album.songs">
+        <h6 class="card-title">{{song.trackNumber}} - {{song.trackName}}</h6>
+      </li>
+    </ul>
+  </div>
+</div>
+<a routerLink="/"><< Volver</a>
