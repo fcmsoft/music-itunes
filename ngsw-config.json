@@ -1,0 +1,55 @@
+{
+  "index": "/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "resources": {
+        "files": [
+          "/favicon.ico",
+          "/index.html",
+          "/manifest.json",
+          "/*.css",
+          "/*.js",
+          "/*.woff",
+          "/*.woff2",
+          "/*.svg",
+          "/*.ttf",
+          "/*.eot",
+          "/*.ico"
+        ]
+      }
+    }, {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "resources": {
+        "files": [
+          "/assets/**"
+        ]
+      }
+    },
+    {
+      "name": "externals",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "resources":{
+       "urls": [
+          "https://fontawesome.com/**"
+       ]
+      }
+    }
+  ],
+  "dataGroups": [{
+    "name": "rest-api",
+    "urls": [
+      "https://itunes.apple.com/**"
+    ],
+    "cacheConfig": [{
+      "strategy": "freshness",
+      "maxSize": 1000,
+      "maxAge": "1h",
+      "timeout": "15s"
+    }]
+  }]
+}
