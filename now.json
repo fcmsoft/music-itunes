@@ -8,6 +8,16 @@
     }
   ],
   "routes": [
-    { "src": ".*", "dest": "/index.html" }
+    {"src": "^/3rdpartylicense.txt", "dest": "/3rdpartylicense.txt"},
+    {"src": "^/favicon.ico", "dest": "/favicon.ico"},
+    {"src": "^/main(.*)", "dest": "/main$1"},
+    {"src": "^/polyfills(.*)", "dest": "/polyfills$1"},
+    {"src": "^/styles(.*)", "dest": "/styles$1"},
+    {"src": "^/manifest(.*)", "dest": "/manifest$1"},
+    {"src": "^/fa-(.*)", "dest": "/fa-$1"},
+    {"src": "^/ngsw(.*)", "dest": "/ngsw$1"},
+    {"src": "^/worker(.*)", "dest": "/worker$1"},
+    {"src": "^/runtime(.*)", "dest": "/runtime$1"},
+    {"src": "^/(.*)", "dest": "/index.html"}
   ]
 }
